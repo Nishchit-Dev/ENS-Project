@@ -36,12 +36,12 @@ contract Domains is ERC721URIStorage {
 
         require(len > 0, "too Short name or enter valid name");
 
-        if (len == 3) {
-            return 5 * (10**17);
+        if (len <= 3) {
+            return 5 * (10**16);
         } else if (len == 4) {
-            return 3 * (10**17);
-        } else {
-            return 1 * (10**17);
+            return 3 * (10**16);
+        } else if(len > 4 ){
+            return 1 * (10**16);
         }
     }
 
